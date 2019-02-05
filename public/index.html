@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html>
-  <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Counter</title>
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="stylesheet" href="/screen.css">
-  </head>
-  <body>
-    <h1 class='hello-world'></h1>
-    <script src="/main.js" charset="utf-8"></script>
-  </body>
+	<head lang="en">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Scoreboard</title>
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="stylesheet" href="/screen.css" />
+	</head>
+	<body>
+		<h1>My Score Board</h1>
+		<section class="score-area">
+			<!-----My Team1 Name Label----->
+			<section class="team1">
+				<h2 class="team1NameLbl">Team 1</h2>
+				<p class="team1ScoreLbl">10</p>
+			</section>
+			<!----------------------->
+			<!-----My Team2 Name Label----->
+			<section class="team2">
+				<h2 class="team2NameLbl">Team 2</h2>
+				<p class="team2ScoreLbl">10</p>
+			</section>
+			<!----------------------->
+		</section>
+		<section class="update-score">
+			<section class="team1">
+				<section class="team-name">
+					update team 1 name
+					<!-----My Team1 Name Text Label----->
+					<input type="text" class="myNameTeam1Txt" />
+					<!---------------------------->
+					<!-----My Team1 Name Button Label----->
+					<button class="update-team-1-name">Update</button>
+					<!---------------------------->
+				</section>
+				<section>
+					update team 1 score
+					<!-- My Team1 Buttons for Add and Rest -->
+					<button class="team-1-add-1-button">add 1</button>
+					<button class="team-1-subtract-1-button">subtract 1</button>
+					<!---------------------------->
+				</section>
+			</section>
+			<section class="team2">
+				<section class="team-name">
+					update team 2 name
+					<!-----My Team2 Name Text Label----->
+					<input type="text" class="myNameTeam2Txt" />
+					<!---------------------------->
+					<!-----My Team2 Name Button Label----->
+					<button class="update-team-2-name">Update</button>
+					<!---------------------------->
+				</section>
+				<section>
+					update team 2 score
+					<!-- My Team2 Buttons for Add and Rest -->
+					<button class="team-2-add-2-button">add 1</button>
+					<button class="team-2-subtract-2-button">subtract 1</button>
+					<!---------------------------->
+				</section>
+			</section>
+		</section>
+		<script src="/main.js" charset="utf-8"></script>
+	</body>
 </html>
