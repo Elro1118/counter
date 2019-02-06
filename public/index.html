@@ -10,6 +10,8 @@
   <body>
     <section class="TitleSection">
       <h1>My Score Board</h1>
+      <p id="safeTimerDisplay">00:00</p>
+      <button class="myTimerBtn">Star Game</button>
     </section>
     <section class="score-area">
       <!-----My Team1 Name Label----->
@@ -64,10 +66,14 @@
       </section>
     </section>
     <section class="periodResetSection">
-      <section class="myPeriodTrackerSection">
+      <section class="myHeaderPeriod">
         <h2>My Period Tracker</h2>
-        <button class="savePeriod">Save Period</button>
-        <p></p>
+        <p class="myTimePeriod">Time:</p>
+        <input type="text" class="timePeriodTxt" />
+        <button class="savePeriod">Save Time</button>
+        <section class="myPeriodTrackerSection">
+          <p></p>
+        </section>
       </section>
       <section class="myResetSection">
         <h2>Reset The Game</h2>

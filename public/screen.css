@@ -6,7 +6,7 @@ html {
   height: 100%;
 }
 
-body {
+#myBody {
   margin: 0;
   min-height: 100%;
 }
@@ -64,6 +64,11 @@ h1 {
   margin: 1rem;
 }
 /* -----Period Tracker Section----- */
+.myHeaderPeriod {
+  background: peru;
+  width: 20rem;
+  border-radius: 0.5rem;
+}
 .myPeriodTrackerSection {
   background: peru;
   width: 20rem;
@@ -89,6 +94,10 @@ h1 {
 }
 .black-text {
   color: black;
+}
+#safeTimerDisplay {
+  background: black;
+  color: white;
 }
 
 @media (max-width: 600px) {
@@ -153,4 +162,11 @@ h1 {
     margin: 0.5rem;
   }
   /* ---------------------- */
+  /* ----------My Clock---------- */
+  #safeTimerDisplay {
+    background: black;
+    color: white;
+  }
+
+  /* ---------------------------- */
 }

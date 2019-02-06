@@ -5,7 +5,7 @@ let nameTeam2 = ''
 let scoreTeam1 = 0
 let scoreTeam2 = 0
 let numberPeriod = 1
-let newElement = document.createElement('p')
+let timePeriod = 0
 
 // ****************************
 
@@ -104,7 +104,8 @@ const changeMyNameTeam = clickObject => {
 // ********************************
 // ********My Period Tracker*******
 const savePeriodTracker = () => {
-  newElement = document.createElement('p')
+  let newElement = document.createElement('p')
+  // newElement = document.createElement('p')
   newElement.textContent =
     'Period ' +
     numberPeriod +
@@ -119,6 +120,12 @@ const savePeriodTracker = () => {
 
   document.querySelector('.myPeriodTrackerSection').appendChild(newElement)
   numberPeriod++
+}
+// ********************************
+// **********Save Time*************
+const saveTimePeriod = () => {
+  timePeriod = document.querySelector('.timePeriodTxt').value
+  document.getElementById('safeTimerDisplay').textContent = '00:' + timePeriod
 }
 // ********************************
 
@@ -147,14 +154,30 @@ const resetCounter = () => {
   document.querySelector('.update-team-2-name').disabled = false
   document.querySelector('.savePeriod').disabled = false
   // ********************************
+  // **********My Winner Label*******
   document.querySelector('h2.team1NameLbl').classList.add('black-text')
   document.querySelector('h2.team2NameLbl').classList.add('black-text')
+  // ********************************
   // *********My Period**************
-  document.querySelector('.myPeriodTrackerSection').removeChild(newElement)
+  document.querySelector('.myPeriodTrackerSection').textContent = ''
   // ********************************
 }
-
 // *************************************************************
+// ************My Timer************
+const timerClock = () => {
+  let sec = timePeriod
+  let timer = setInterval(function() {
+    document.getElementById('safeTimerDisplay').textContent = '00:' + sec
+    sec--
+    if (sec === 0) {
+      savePeriodTracker()
+    }
+    if (sec < 0) {
+      clearInterval(timer)
+    }
+  }, 1000)
+}
+// ********************************
 
 document.addEventListener('DOMContentLoaded', main)
 // go the HTML (DOM)
@@ -185,8 +208,8 @@ document
 document
   .querySelector('.team-2-subtract-2-button')
   .addEventListener('click', subtractMyScoreTeam)
-document
-  .querySelector('.savePeriod')
-  .addEventListener('click', savePeriodTracker)
+document.querySelector('.savePeriod').addEventListener('click', saveTimePeriod)
 
 document.querySelector('.resetButton').addEventListener('click', resetCounter)
+
+document.querySelector('.myTimerBtn').addEventListener('click', timerClock)
