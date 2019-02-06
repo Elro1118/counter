@@ -5,6 +5,7 @@ let nameTeam2 = ''
 let scoreTeam1 = 0
 let scoreTeam2 = 0
 let numberPeriod = 1
+let newElement = document.createElement('p')
 
 // ****************************
 
@@ -28,6 +29,8 @@ const addMyScoreTeam = clickObject => {
     if (counter === 21) {
       document.querySelector('h2.team2NameLbl').textContent =
         nameTeam2 + ' WON!'
+      document.querySelector('h2.team2NameLbl').classList.remove('black-text')
+      document.querySelector('h2.team2NameLbl').classList.add('blue-text')
       document.querySelector('.team-1-add-1-button').disabled = true
       document.querySelector('.team-2-add-2-button').disabled = true
       document.querySelector('.team-1-subtract-1-button').disabled = true
@@ -46,6 +49,8 @@ const addMyScoreTeam = clickObject => {
     if (counter === 21) {
       document.querySelector('h2.team1NameLbl').textContent =
         nameTeam1 + ' WON!'
+      document.querySelector('h2.team1NameLbl').classList.remove('black-text')
+      document.querySelector('h2.team1NameLbl').classList.add('blue-text')
       document.querySelector('.team-1-add-1-button').disabled = true
       document.querySelector('.team-2-add-2-button').disabled = true
       document.querySelector('.team-1-subtract-1-button').disabled = true
@@ -99,10 +104,11 @@ const changeMyNameTeam = clickObject => {
 // ********************************
 // ********My Period Tracker*******
 const savePeriodTracker = () => {
-  const newElement = document.createElement('p')
+  newElement = document.createElement('p')
   newElement.textContent =
     'Period ' +
     numberPeriod +
+    ' ' +
     nameTeam1 +
     ': ' +
     scoreTeam1 +
@@ -116,7 +122,7 @@ const savePeriodTracker = () => {
 }
 // ********************************
 
-// ********My Reset Function*******
+// ********************My Reset Function*********************
 const resetCounter = () => {
   // ********* */My Variables********
   counter = 0
@@ -141,8 +147,14 @@ const resetCounter = () => {
   document.querySelector('.update-team-2-name').disabled = false
   document.querySelector('.savePeriod').disabled = false
   // ********************************
+  document.querySelector('h2.team1NameLbl').classList.add('black-text')
+  document.querySelector('h2.team2NameLbl').classList.add('black-text')
+  // *********My Period**************
+  document.querySelector('.myPeriodTrackerSection').removeChild(newElement)
+  // ********************************
 }
-// ********************************
+
+// *************************************************************
 
 document.addEventListener('DOMContentLoaded', main)
 // go the HTML (DOM)
